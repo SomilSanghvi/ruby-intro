@@ -15,3 +15,12 @@
 # HINTS
 # Learn to read the documentation!
 # https://ruby-doc.org/core-2.7.0/Array.html
+
+somil_list = ["milk", "eggs", "bacon"]
+ashley_list = ["beer", "cookies", "apples"]
+
+combined_shopping_list = (somil_list + ashley_list)
+
+puts combined_shopping_list.uniq.sort
+
+combined_shopping_list.each { |item| puts "buy #{item}" }

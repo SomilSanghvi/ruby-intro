@@ -27,9 +27,15 @@ bitcoin = gets.chomp
 bitcoin = bitcoin.to_f
 
 # 3. Inspect the bitcoin_data hash
-# puts bitcoin_data
+#puts bitcoin_data
 
 # 4. Display the value of the user's bitcoin
 # Sample output:
+
+price_usd = bitcoin_data["USD"]["last"]
+
+puts "1 Bitcoin is valued at $#{price_usd}"
+puts "Your Bitcoin is valued at $#{price_usd*bitcoin}"
+
 # puts "1 Bitcoin is valued at $41405.1046 USD."
 # puts "Your Bitcoin is worth $62107.6569."

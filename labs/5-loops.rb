@@ -10,6 +10,23 @@ diamonds = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 hearts = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 spades = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 
+## also could do the following
+# clubs.each { |card| puts "#{card} of Clubs" }
+# diamonds.each { |card| puts "#{card} of Diamonds" }
+# hearts.each { |card| puts "#{card} of Hearts" }
+# spades.each { |card| puts "#{card} of Spades" }
+
+## this is a simpler way
+suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
+cards = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+
+suits.each do |suit|
+  cards.each do |card| 
+    puts "#{card} of #{suit}"
+  end
+end
+
+
 # Sample output:
 # 2 of Clubs
 # 3 of Clubs
@@ -23,9 +40,24 @@ spades = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 # The arrays are identical for each suit and can be simplified by using
 # a ranks array as seen below. Try to complete the exercise again by
 # combining these arrays.
-ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
-suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
+
+##ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+##suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
 
 # CHALLENGE #2
 # Deal a poker hand. Shuffle the deck and "deal" (i.e. display) a 5 card hand (i.e. 5 cards from the deck).
+
+deck = []
+
+suits.each do |suit|
+  cards.each do |card|
+    deck << "#{card} of #{suit}"
+  end
+end
+
+puts deck.size
+
+hand = deck.sample(5)
+puts hand
+
 # You will want to look at the documentation for Arrays: https://ruby-doc.org/core-2.7.0/Array.html

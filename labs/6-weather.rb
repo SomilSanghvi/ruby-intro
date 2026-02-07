@@ -30,3 +30,27 @@ weather_data = {
     { temperature: 60, conditions: "Rainy", precipitation: 0.9 }
   ]
 }
+
+current_temp = weather_data[:current][:temperature]
+current_conditions = weather_data[:current][:conditions]
+
+puts "Currently it is #{current_temp} degrees and #{current_conditions}."
+
+weather_data[:forecast].each do |day|
+  if day[:precipitation] > 0.5 && day[:conditions] != "Rainy"
+    puts " - #{day[:temperature]} degrees and #{day[:conditions]} with a #{day[:precipitation]*100} chance of rain"
+  else puts " - #{day[:temperature]} degrees and #{day[:conditions]} "
+  end 
+end
+
+
+# Forecast for the next 7 days:
+# - 65 degres and Mostly Cloudy
+# - 70 degrees and Partly Cloudy
+# - 62 degrees and Sunny
+# - 68 degrees and Sunny
+# - 65 degrees and Partly Cloudy with a 70% chance of rain
+# - 72 degrees and Partly Cloudy
+# - 60 degrees and Rainy
+# Note: only display the chance of rain if above 50%.
+# Note: do not display the chance of rain if conditions are already rainy.
